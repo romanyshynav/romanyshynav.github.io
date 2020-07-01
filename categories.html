@@ -1,0 +1,110 @@
+<!doctype>
+<head>
+    <meta charset="utf-8">
+    <title>Категорії</title>
+    <link rel="stylesheet" type="text/css" href="Tickets/styleCategories.css">
+    <link rel="icon" href="Tickets/images/icon.png" type="Tickets/images/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+<div class="innerPages">
+<a class="btn" href="http://localhost:8080/productCatalog" target="_blank">Каталог продуктів</a>
+<a class="btn" href="http://localhost:8080/persons" target="_blank">Список покупців</a>
+</div>
+<h1>Категорії</h1>
+<!--====================================Кнопка та Модальне вікно для створення нового поїзда=========================================-->
+<div id="categoryCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="categoryInputName" type="text" placeholder="name">
+    </div>
+    <div class="modal-footer">
+        <button id="categoryCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="categoryCreateModal" class="btn modal-trigger">Додати нову категорію</button>
+<!--====================================Кнопка та Модальне вікно для створення рандомних продуктів====================================-->
+<div id="categoryRandomCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="categoryInputQuantity" type="text" placeholder="quantity">
+    </div>
+    <div class="modal-footer">
+        <button id="categoryRandomCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="categoryRandomCreateModal" class="btn modal-trigger">Додати категорії рандомно</button>
+<!--====================================Кнопка для ВИДАЛЕННЯ всіх категорій===========================================================-->
+<button id="categoryDeleteAllButton" class="btn">Видалити всі категорії</button>
+
+<!--====================================Модальне вікно для редагування поїзда=======================================================-->
+<div id="categoryUpdateModal" class="modal">
+    <div class="modal-content">
+        <input data-id="" id="categoryUpdateInputName" type="text" placeholder="name">
+    </div>
+    <div class="modal-footer">
+        <button id="categoryUpdateButton" class="btn">Update</button>
+    </div>
+</div>
+
+<!--=================================Шапка таблиці, фільтрація, тіло таблиці з  кнопками "видалити/редагувати"==================-->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Назва</th>
+        <th>Дії</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><input data-id="" id="categoryFilterName" type="text" placeholder="filterByName"></th>
+        <th>
+            <button id="categoryFilterButton" class="btn">Застосувати фільтр</button>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody id="categoryTableRow">
+
+    </tbody>
+</table>
+<!--=================================Елементи посторіночної розбивки===================================================================-->
+
+<div class="page-size-sort">
+    <div class="input-field">
+        <select class="sortField">
+            <option value="id" selected>id</option>
+            <option value="name">name</option>
+        </select>
+        <label>Sort by</label>
+    </div>
+    <div class="input-field">
+        <select class="page-size">
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="20" selected>20</option>
+        </select>
+        <label>Page size</label>
+    </div>
+    <div class="input-field">
+        <select class="orderBy">
+            <option value="ASC" selected>Зростання</option>
+            <option value="DESC">Спадання</option>
+        </select>
+        <label>Order by</label>
+    </div>
+</div>
+
+<div class="page-controllers">
+    <button class="btn btn-prev">prev</button>
+    <span class="page-number">1</span>
+    <button class="btn btn-next">next</button>
+</div>
+<!--==================================================================================================================================-->
+
+<script src="Tickets/scriptCategories.js"></script>
+</body>
+</html>

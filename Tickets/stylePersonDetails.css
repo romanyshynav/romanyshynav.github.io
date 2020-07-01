@@ -1,0 +1,49 @@
+/*=======================================Стилі для Посторіночна розбивка та сортування=================================================*/
+.page-size-sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-field {
+    width: 100px;
+}
+
+.page-controllers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-number {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+/*===================================================================================================================================*/
+.itemFoto {
+    max-width: 100%;
+    height: 120px;
+    width: 120px;
+}
+
+img {
+    max-width: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+/*================================================================================================*/
+.innerPages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerPages .btn {
+    margin: 0 10px;
+    background-color: chocolate;
+}
+
+.container .btn {
+    background-color: cornflowerblue;
+}

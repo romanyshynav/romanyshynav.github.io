@@ -1,0 +1,130 @@
+<!doctype>
+<head>
+    <meta charset="utf-8">
+    <title>Покупці</title>
+    <link rel="stylesheet" type="text/css" href="Tickets/stylePersons.css">
+    <link rel="icon" href="Tickets/images/icon.png" type="Tickets/images/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+<div class="innerPages">
+    <a class="btn" href="http://localhost:8080/categories" target="_blank">Список категорій</a>
+    <a class="btn" href="http://localhost:8080/productCatalog" target="_blank">Каталог продуктів</a>
+</div>
+<h1>Покупці</h1>
+<!--====================================Кнопка та Модальне вікно для створення нового поїзда=========================================-->
+<div id="personCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="personInputName" type="text" placeholder="name">
+        <input id="personInputImageB64Format" type="text" placeholder="imageB64Format">
+        <input type="file" id="getFileCreate">
+        <input type="button" value="Send" id="sendFileCreate">
+        <input id="personInputMoney" type="text" placeholder="money">
+    </div>
+    <div class="modal-footer">
+        <button id="personCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="personCreateModal" class="btn modal-trigger">Додати нового покупця</button>
+
+<!--====================================Кнопка та Модальне вікно для створення рандомних продуктів====================================-->
+<div id="personRandomCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="personInputQuantity" type="text" placeholder="quantity">
+    </div>
+    <div class="modal-footer">
+        <button id="personRandomCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="personRandomCreateModal" class="btn modal-trigger">Додати покупців рандомно</button>
+
+<!--====================================Модальне вікно для редагування поїзда=======================================================-->
+<div id="personUpdateModal" class="modal">
+    <div class="modal-content">
+        <input data-id="" id="personUpdateInputName" type="text" placeholder="name">
+        <input id="persoUpdateInputImageB64Format" type="text" placeholder="imageB64Format">
+        <input type="file" id="getFileUpdate">
+        <input type="button" value="Send" id="sendFileUpdate">
+        <input id="persoUpdateInputMoney" type="text" placeholder="money">
+
+    </div>
+    <div class="modal-footer">
+        <button id="personUpdateButton" class="btn">Update</button>
+    </div>
+</div>
+
+<!--====================================Кнопка для ВИДАЛЕННЯ всіх категорій===========================================================-->
+<button id="personDeleteAllButton" class="btn">Видалити всіх покупців</button>
+
+<!--=================================Елементи посторіночної розбивки===================================================================-->
+<div class="page-size-sort">
+    <div class="input-field">
+        <select class="sortField">
+            <option value="id" selected>id</option>
+            <option value="fname">ім'я</option>
+            <option value="money">гроші</option>
+        </select>
+        <label>Sort by</label>
+    </div>
+    <div class="input-field">
+        <select class="page-size">
+            <option value="2">2</option>
+            <option value="5">5</option>
+            <option value="20" selected>20</option>
+        </select>
+        <label>Page size</label>
+    </div>
+    <div class="input-field">
+        <select class="orderBy">
+            <option value="ASC" selected>Зростання</option>
+            <option value="DESC">Спадання</option>
+        </select>
+        <label>Order by</label>
+    </div>
+</div>
+
+<div class="page-controllers">
+    <button class="btn btn-prev">prev</button>
+    <span class="page-number">1</span>
+    <button class="btn btn-next">next</button>
+</div>
+
+<!--=================================Шапка таблиці, фільтрація, тіло таблиці з  кнопками "видалити/редагувати"==================-->
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Ім'я</th>
+        <th>Фотографія</th>
+        <th>Гроші</th>
+        <th>Дії</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th><input id="personFilterName" type="text" placeholder="filterByName"></th>
+        <th></th>
+        <th>
+            <input id="personFilterMoneyMin" type="text" placeholder="filterByMoneyMin">
+            <input id="personFilterMoneyMax" type="text" placeholder="filterByMoneyMax">
+        </th>
+        <th>
+            <button id="personFilterButton" class="btn">Застосувати фільтр</button>
+        </th>
+    </tr>
+    </thead>
+
+    <tbody id="personTableRow">
+
+    </tbody>
+</table>
+
+<!--==================================================================================================================================-->
+
+<script src="Tickets/scriptPersons.js"></script>
+</body>
+</html>

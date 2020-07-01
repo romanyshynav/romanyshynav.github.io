@@ -1,0 +1,38 @@
+/*=======================================Стилі для Посторіночна розбивка та сортування=================================================*/
+.page-size-sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-field {
+    width: 100px;
+}
+
+.page-controllers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-controllers .btn{
+    /*background-color: darkgoldenrod;*/
+    background-color: maroon;
+}
+.page-number {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+/*===================================================================================================================================*/
+.innerPages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerPages .btn{
+    margin: 0 10px;
+background-color: chocolate;
+}
+table #categoryFilterButton{
+    background-color: greenyellow;
+    color: black;
+}

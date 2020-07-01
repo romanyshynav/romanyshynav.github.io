@@ -1,0 +1,127 @@
+<!doctype>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Каталог продуктів</title>
+    <link rel="stylesheet" type="text/css" href="Tickets/styleProductCatalog.css">
+    <link rel="icon" href="Tickets/images/icon.png" type="Tickets/images/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+<div class="innerPages">
+<a class="btn" href="http://localhost:8080/categories" target="_blank">Список категорій</a>
+<a class="btn" href="http://localhost:8080/persons" target="_blank">Список покупців</a>
+</div>
+<h1>Продукти</h1>
+<!--====================================Кнопка та Модальне вікно для СТВОРЕННЯ нового поїзда=========================================-->
+<div id="productCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="productInputName" type="text" placeholder="name">
+        <input id="productInputPrice" type="text" placeholder="price">
+        <input id="productInputImageB64Format" type="text" placeholder="imageB64Format">
+        <input type="file" id="getFileCreate">
+        <input type="button" value="Send" id="sendFileCreate">
+        <select class="categorySelect"></select>
+        <label>Category</label>
+    </div>
+    <div class="modal-footer">
+        <button id="productCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="productCreateModal" class="btn modal-trigger">Додати новий продукт</button>
+
+<!--====================================Кнопка та Модальне вікно для СТВОРЕННЯ РАНДОМНИХ продуктів====================================-->
+<div id="productRandomCreateModal" class="modal">
+    <div class="modal-content">
+        <input id="productInputQuantity" type="text" placeholder="quantity">
+    </div>
+    <div class="modal-footer">
+        <button id="productRandomCreateButton" class="btn">Створити</button>
+    </div>
+</div>
+<button data-target="productRandomCreateModal" class="btn modal-trigger">Додати продукти рандомно</button>
+
+<!--====================================Модальне вікно для РЕДАГУВАННЯ поїзда=======================================================-->
+<div id="productUpdateModal" class="modal">
+    <div class="modal-content">
+        <input id="productUpdateInputName" type="text" placeholder="name">
+        <input id="productUpdateInputPrice" type="text" placeholder="price">
+        <input id="productUpdateInputImageB64Format" type="text" placeholder="imageB64Format">
+        <input type="file" id="getFileUpdate">
+        <input type="button" value="Send" id="sendFileUpdate">
+        <input id="productUpdateInputCategoryId" type="text" placeholder="categoryId">
+    </div>
+    <div class="modal-footer">
+        <button id="productUpdateButton" class="btn">Update</button>
+    </div>
+</div>
+
+<!--====================================Кнопка для ВИДАЛЕННЯ всіх категорій===========================================================-->
+<button id="productDeleteAllButton" class="btn">Видалити всі продукти</button>
+
+<!--====================================Елементи для ФІЛЬТРАЦІЇ================================================-->
+<table>
+        <caption><h4>Фільтрувати за полями</h4></caption>
+
+    <thead>
+    <tr>
+        <th></th>
+        <th><input id="productFilterName" type="text" placeholder="filterByName"></th>
+        <th><input id="productFilterPriceMin" type="text" placeholder="filterByPriceMin"></th>
+        <th><input id="productFilterPriceMax" type="text" placeholder="filterByPriceMax"></th>
+        <th><input id="productFilterCategoryId" type="text" placeholder="filterByCategoryId"></th>
+
+        <th>
+            <button id="productFilterButton" class="btn">Застосувати фільтр</button>
+        </th>
+    </tr>
+    </thead>
+</table>
+
+<!--====================================Елементи посторіночної РОЗБИВКИ та СОРТУВАННЯ================================================-->
+<div class="page-size-sort">
+    <div class="input-field">
+        <select class="sortField">
+            <option value="id" selected>id</option>
+            <option value="name">name</option>
+            <option value="price">price</option>
+            <option value="categoryId">categoryId</option>
+        </select>
+        <label>Sort by</label>
+    </div>
+    <div class="input-field">
+        <select class="page-size">
+            <option value="2" >2</option>
+            <option value="5">5</option>
+            <option value="20" selected>20</option>
+        </select>
+        <label>Page size</label>
+    </div>
+    <div class="input-field">
+        <select class="orderBy">
+            <option value="ASC" selected>Зростання</option>
+            <option value="DESC">Спадання</option>
+        </select>
+        <label>Order by</label>
+    </div>
+</div>
+<div class="page-controllers">
+    <button class="btn btn-prev">prev</button>
+    <span class="page-number">1</span>
+    <button class="btn btn-next">next</button>
+</div>
+
+<!--==================================================================================================================================-->
+<div class="container">
+
+</div>
+<!--===================================================================================================================-->
+<script src="Tickets/scriptProductCatalog.js"></script>
+
+</body>
+</html>

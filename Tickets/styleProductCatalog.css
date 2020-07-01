@@ -1,0 +1,61 @@
+/*=======================================Урок № 54 каталог продуктів ========================================*/
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.item {
+    max-width: 19%;
+    /*height: 350px;*/
+}
+
+.item img {
+    max-width: 100%;
+}
+
+/*=======================================Стилі для Посторіночна розбивка та сортування=================================================*/
+.page-size-sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.input-field {
+    width: 100px;
+}
+
+.page-controllers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.page-controllers .btn{
+    /*background-color: darkgoldenrod;*/
+    background-color: maroon;
+}
+
+.page-number {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+/*===================================================================================================================================*/
+.innerPages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.innerPages .btn{
+    margin: 0 10px;
+    background-color: chocolate;
+}
+table #productFilterButton{
+    background-color: greenyellow;
+    color: black;
+}
+.productPrice{
+    color: red;
+
+}
